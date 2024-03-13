@@ -80,9 +80,11 @@ def get_weather(city):
             }
         # If response is not sucessful
         else:
+            print(f"{response.status_code} error contacting the OpenWeatherMap API.")
             return {}
     # If there is an error with the request itself
     except:
+        print(f"Exception while trying to contact the OpenWeatherMap API.")
         return {}
 
 @app.route("/jumo_weather", methods=["POST"])
